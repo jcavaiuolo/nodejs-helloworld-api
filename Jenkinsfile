@@ -23,7 +23,7 @@ pipeline {
 
     stage('Start') {
       steps {
-        sh 'npm start'
+        sh 'npm start && curl http://localhost:3000'
       }
     }
 
