@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('1st') {
       steps {
+        tool(name: 'nodejs', type: 'nodejs')
         git(url: 'https://github.com/jcavaiuolo/nodejs-helloworld-api.git', branch: 'main')
       }
     }
