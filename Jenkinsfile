@@ -1,10 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('CloneRepo') {
+    stage('nodejsTool') {
       steps {
         tool(name: 'nodejs', type: 'nodejs')
-        sh 'git clone https://github.com/jcavaiuolo/nodejs-helloworld-api.git'
+      }
+    }
+
+    stage('gitClone') {
+      steps {
+        git(url: 'https://github.com/jcavaiuolo/nodejs-helloworld-api.git', branch: 'main')
       }
     }
 
@@ -16,13 +21,13 @@ pipeline {
 
     stage('npmTest') {
       steps {
-        sh 'npm test'
+        sh 'npmTest'
       }
     }
 
-    stage('npmStart') {
+    stage('npmBuild') {
       steps {
-        sh 'npm start'
+        sh 'npm build'
       }
     }
 
