@@ -1,13 +1,9 @@
 pipeline {
-  agent {
-    node {
-      label 'nodejs'
-    }
-
-  }
+  agent any
   stages {
     stage('CloneRepo') {
       steps {
+        tool(name: 'nodejs', type: 'nodejs')
         sh 'git clone https://github.com/jcavaiuolo/nodejs-helloworld-api.git'
       }
     }
