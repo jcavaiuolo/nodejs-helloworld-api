@@ -15,7 +15,7 @@ pipeline {
 
     stage('npmInstall') {
       steps {
-        sh 'npm install'
+        sh 'npm install && npm install forever -g'
       }
     }
 
@@ -27,7 +27,7 @@ pipeline {
 
     stage('npmStart') {
       steps {
-        sh 'npm start'
+        sh 'forever start'
       }
     }
 
