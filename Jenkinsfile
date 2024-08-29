@@ -27,7 +27,7 @@ pipeline {
 
     stage('npmStart') {
       steps {
-        sh 'forever start'
+        sh 'forever start index.js'
       }
     }
 
