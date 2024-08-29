@@ -15,7 +15,7 @@ pipeline {
 
     stage('npmInstall') {
       steps {
-        sh 'npm install && npm install forever -g'
+        sh 'npm install && npm install forever-monitor'
       }
     }
 
