@@ -15,7 +15,7 @@ pipeline {
 
     stage('npmInstall') {
       steps {
-        sh 'npm install && npm install forever-monitor'
+        sh 'npm install'
       }
     }
 
@@ -27,7 +27,7 @@ pipeline {
 
     stage('npmStart') {
       steps {
-        sh 'forever start index.js'
+        sh 'nohup npm start &'
       }
     }
 
